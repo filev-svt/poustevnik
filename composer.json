@@ -1,0 +1,6 @@
+{
+    "require": {
+        "nette/mail": "^2.4",
+        "swiftmailer/swiftmailer": "^6.0"
+    }
+}

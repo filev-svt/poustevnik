@@ -1,0 +1,524 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Quicksand, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+h1 {
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+    color: white;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+table {
+    font-size: 18px;
+    width: 100%;
+    border-spacing: 0;
+    padding: 20px 0;
+}
+
+nav {
+    margin-top: 40px;
+    font-size: 18px;
+    width: 200px;
+    height: 100%;
+    color: white;
+    background-color: #3b3b3b;
+    position: fixed;
+}
+
+nav ul {
+    padding: 30px 0 0 0;
+    list-style-type: none;
+}
+
+nav ul li {
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: #252525;
+}
+
+main {
+    margin-left: 200px;
+    padding: 80px 20px 20px 20px;
+}
+
+header {
+    line-height: 2em;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    color: white;
+    background-color: #009688;
+    z-index: 2;
+}
+
+header > * {
+    vertical-align: middle;
+}
+
+header h1 {
+    color: white;
+    text-decoration: none;
+}
+
+button, input[type="submit"] {
+    font-family: Quicksand, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #B2DFDB;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    color: white;
+    background-color: #4DB6AC;
+}
+
+input, select {
+    margin: 10px auto;
+    display: block;
+    padding: 7px;
+    width: 300px;
+    font-family: Quicksand, sans-serif;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #4DB6AC;
+}
+
+input:read-only {
+    background-color: lightgrey;
+    border: 2px solid lightgrey;
+}
+input[type="checkbox"] {
+    width: auto;
+}
+
+.accordion {
+    text-align: left;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+.accordion:hover {
+    color: white;
+    background-color: #4DB6AC;
+}
+
+.accordion:after {
+    color: white;
+    background-color: #4DB6AC;
+}
+
+.accordion.active {
+    box-shadow: 0 5px 10px -1px darkgrey;
+    color: white;
+    background-color: #4DB6AC;
+}
+
+.active {
+    color: white;
+    background-color: #252525;
+}
+
+.active .fa-fw {
+    color: #009688;
+}
+
+.panel {
+    background-color: #E0F7FA;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    overflow-x: auto;
+    transition: max-height 0.2s ease-out;
+    text-align: center;
+}
+
+.calendar {
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.calendar th {
+    padding: 15px;
+}
+
+.calendar td {
+    height: 50px;
+    width: calc(100% / 7);
+}
+
+.after {
+    cursor: pointer;
+    background-color: #C8E6C9;
+}
+
+.after:hover {
+    background-color: #A5D6A7;
+}
+
+.after:active {
+    background-color: #FFD54F;
+}
+
+.before {
+    background-color: #9E9E9E;
+}
+
+.taken {
+    background-color: #ffcdd2;
+}
+
+.selected {
+    background-color: #FFD54F;
+}
+
+#nextMonth {
+    margin-top: 10px;
+    float: right;
+}
+
+#previousMonth {
+    margin-top: 10px;
+    float: left;
+}
+
+#removeSelected {
+    margin-top: 12px;
+    font-size: 14px;
+    float: none;
+}
+
+.headerRight {
+    background-color: #3b3b3b;
+    position: absolute;
+    right: 0;
+    display: none;
+    float: right;
+}
+
+.headerRight ul {
+    padding: 20px;
+    list-style-type: none;
+}
+
+.headerRight a:hover {
+    background-color: #252525;
+
+}
+
+.userLogo {
+    font-size: 2em;
+    padding: 10px;
+    position: relative;
+    display: block;
+    background-color: #B2DFDB;
+    color: black !important;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    float: right;
+}
+
+.userLogo:hover {
+    color: white !important;
+    background-color: #4DB6AC;
+}
+
+.mobileNav {
+    display: none;
+}
+
+.formSteps ul {
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+    list-style-type: none;
+    counter-reset: step;
+}
+
+.formSteps ul li {
+    width: 19%;
+    display: inline-block;
+}
+
+.formNav {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.formNav button {
+    display: inline-block;
+}
+
+.column {
+    display: inline-block;
+    width: 50%;
+}
+
+.dashItem {
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    background-color: #E0F7FA;
+    box-shadow: 0 5px 10px -1px darkgrey;
+}
+
+.dashItem h3 {
+    text-align: left;
+    margin: 0;
+}
+
+.dashItem ul {
+    list-style-type: none;
+}
+
+#leftColumn {
+    margin-right: 10px;
+}
+
+#rightColumn {
+    margin-left: 10px;
+}
+
+#reservationDetail td:first-child {
+    padding-right: 10px;
+    text-align: right;
+}
+
+#reservationDetail td {
+    border: none;
+    text-align: left;
+    width: 50%;
+    font-size: 18px;
+}
+
+.loginForm {
+    margin-top: 100px;
+}
+
+th {
+    background: linear-gradient(to bottom, #E0F2F1, #B2DFDB);
+    padding-top: 7px;
+}
+
+td, th {
+    border: 1px solid #4DB6AC;
+    white-space: nowrap;
+}
+
+td {
+    text-align: center;
+}
+
+td input, td textarea {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+td a {
+    background-color: #B2DFDB;
+    color: black;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+td a:hover {
+    color: white;
+    background-color: #4DB6AC;
+}
+
+.accomodationTable td {
+    white-space: normal;
+}
+
+.pricesEdit {
+    display: block;
+    margin: 20px auto;
+}
+
+.pricesForm {
+    padding-bottom: 30px;
+}
+
+@media (max-width: 1000px) and (min-width: 500px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .mobileNav {
+        font-size: 2em;
+        padding: 10px;
+        height: 100%;
+        background-color: #B2DFDB;
+        color: black;
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block;
+        -webkit-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+    .mobileNav:visited {
+        color: black;
+    }
+
+    .mobileNav:hover {
+        color: white;
+        background-color: #4DB6AC;
+    }
+
+    .calendar td, .calendar th {
+        padding: 3px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 410px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .mobileNav {
+        font-size: 2em;
+        padding: 10px;
+        background-color: #B2DFDB;
+        color: black;
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block;
+        -webkit-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+    .mobileNav:visited {
+        color: black;
+    }
+
+    .mobileNav:hover {
+        color: white;
+        background-color: #4DB6AC;
+    }
+
+    header h1 {
+        font-size: 0.7em;
+    }
+
+    .calendar td, .calendar th {
+        padding: 2px;
+        font-size: 12px;
+    }
+
+    input {
+        width: 80%;
+    }
+}
+
+@media (max-width: 410px) and (min-width: 200px) {
+    nav {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .mobileNav {
+        font-size: 2em;
+        padding: 10px;
+        background-color: #B2DFDB;
+        color: black;
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block;
+        -webkit-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+    .mobileNav:visited {
+        color: black;
+    }
+
+    .mobileNav:hover {
+        color: white;
+        background-color: #4DB6AC;
+    }
+
+    header h1 {
+        font-size: 0.7em;
+    }
+
+    .calendar td, .calendar th {
+        padding: 0;
+        font-size: 10px;
+    }
+
+    input {
+        width: 80%;
+    }
+}

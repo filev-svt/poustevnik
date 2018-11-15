@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mydb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="mydb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="reservation_schema"/>
+    <table id="7" parent="2" name="cenova_sazba"/>
+    <table id="8" parent="2" name="fotografie"/>
+    <table id="9" parent="2" name="jednotka"/>
+    <table id="10" parent="2" name="personal"/>
+    <table id="11" parent="2" name="poplatek"/>
+    <table id="12" parent="2" name="rezervace"/>
+    <table id="13" parent="2" name="rezervace_has_poplatek"/>
+    <table id="14" parent="2" name="zarizeni"/>
+    <column id="15" parent="7" name="id_cenova_sazba">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="7" name="nazev_sazba">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="7" name="cena">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="7" name="datum_od">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="7" name="datum_do">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="7" name="jednotka_id_jednotka">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="7" name="jednotka_zarizeni_id_zarizeni">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="22" parent="7" name="fk_cenova_sazba_jednotka1_idx">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+    </index>
+    <key id="23" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_cenova_sazba
+jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="7" name="fk_cenova_sazba_jednotka1">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>jednotka</RefTableName>
+      <RefColNames>id_jednotka
+zarizeni_id_zarizeni</RefColNames>
+    </foreign-key>
+    <column id="25" parent="8" name="id_fotografie">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="8" name="adresa">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="8" name="jednotka_id_jednotka">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="8" name="jednotka_zarizeni_id_zarizeni">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="8" name="fk_fotografie_jednotka1_idx">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+    </index>
+    <key id="30" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_fotografie
+jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="31" parent="8" name="fk_fotografie_jednotka1">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>jednotka</RefTableName>
+      <RefColNames>id_jednotka
+zarizeni_id_zarizeni</RefColNames>
+    </foreign-key>
+    <column id="32" parent="9" name="id_jednotka">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="9" name="nazev_jednotka">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="9" name="typ_jednotka">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="9" name="maximalni_obsazeni">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="9" name="popis_jednotka">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="37" parent="9" name="zarizeni_id_zarizeni">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="9" name="fk_jednotka_zarizeni_idx">
+      <ColNames>zarizeni_id_zarizeni</ColNames>
+    </index>
+    <key id="39" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_jednotka
+zarizeni_id_zarizeni</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="40" parent="9" name="fk_jednotka_zarizeni">
+      <ColNames>zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>zarizeni</RefTableName>
+      <RefColNames>id_zarizeni</RefColNames>
+    </foreign-key>
+    <column id="41" parent="10" name="id_personal">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="10" name="jmeno_personal">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="10" name="prijmeni_personal">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="10" name="username">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="10" name="heslo">
+      <Position>5</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="10" name="administrator">
+      <Position>6</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="10" name="email">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="48" parent="10" name="zarizeni_id_zarizeni">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="49" parent="10" name="username_UNIQUE">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="50" parent="10" name="fk_personal_zarizeni1_idx">
+      <ColNames>zarizeni_id_zarizeni</ColNames>
+    </index>
+    <key id="51" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_personal</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="52" parent="10" name="username_UNIQUE">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="53" parent="10" name="fk_personal_zarizeni1">
+      <ColNames>zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>zarizeni</RefTableName>
+      <RefColNames>id_zarizeni</RefColNames>
+    </foreign-key>
+    <column id="54" parent="11" name="id_poplatek">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="11" name="nazev_poplatek">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="11" name="cena">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="57" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_poplatek</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="12" name="id_rezervace">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="59" parent="12" name="jmeno">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="12" name="prijmeni">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="12" name="telefon">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="12" name="email">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="12" name="pocet_osob">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="12" name="datum_prijezd">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="12" name="datum_odjezd">
+      <Position>8</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="12" name="celkova_cena">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="12" name="token">
+      <Position>10</Position>
+      <DataType>varchar(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="12" name="jednotka_id_jednotka">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="12" name="jednotka_zarizeni_id_zarizeni">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="12" name="fk_rezervace_jednotka1_idx">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+    </index>
+    <index id="71" parent="12" name="token_UNIQUE">
+      <ColNames>token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_rezervace
+jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="73" parent="12" name="token_UNIQUE">
+      <ColNames>token</ColNames>
+      <UnderlyingIndexName>token_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="74" parent="12" name="fk_rezervace_jednotka1">
+      <ColNames>jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>jednotka</RefTableName>
+      <RefColNames>id_jednotka
+zarizeni_id_zarizeni</RefColNames>
+    </foreign-key>
+    <column id="75" parent="13" name="rezervace_id_rezervace">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="13" name="rezervace_jednotka_id_jednotka">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="13" name="rezervace_jednotka_zarizeni_id_zarizeni">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="13" name="poplatek_id_poplatek">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="79" parent="13" name="fk_rezervace_has_poplatek_poplatek1_idx">
+      <ColNames>poplatek_id_poplatek</ColNames>
+    </index>
+    <index id="80" parent="13" name="fk_rezervace_has_poplatek_rezervace1_idx">
+      <ColNames>rezervace_id_rezervace
+rezervace_jednotka_id_jednotka
+rezervace_jednotka_zarizeni_id_zarizeni</ColNames>
+    </index>
+    <key id="81" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rezervace_id_rezervace
+rezervace_jednotka_id_jednotka
+rezervace_jednotka_zarizeni_id_zarizeni
+poplatek_id_poplatek</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="82" parent="13" name="fk_rezervace_has_poplatek_rezervace1">
+      <ColNames>rezervace_id_rezervace
+rezervace_jednotka_id_jednotka
+rezervace_jednotka_zarizeni_id_zarizeni</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>rezervace</RefTableName>
+      <RefColNames>id_rezervace
+jednotka_id_jednotka
+jednotka_zarizeni_id_zarizeni</RefColNames>
+    </foreign-key>
+    <foreign-key id="83" parent="13" name="fk_rezervace_has_poplatek_poplatek1">
+      <ColNames>poplatek_id_poplatek</ColNames>
+      <RefSchemaName>mydb</RefSchemaName>
+      <RefTableName>poplatek</RefTableName>
+      <RefColNames>id_poplatek</RefColNames>
+    </foreign-key>
+    <column id="84" parent="14" name="id_zarizeni">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="85" parent="14" name="nazev_zarizeni">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="14" name="email_zarizeni">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="87" parent="14" name="telefon_zarizeni">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="88" parent="14" name="mesto">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="14" name="ulice">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="90" parent="14" name="psc">
+      <Position>7</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="14" name="cislo_popisne">
+      <Position>8</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="14" name="cislo_orientacni">
+      <Position>9</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="93" parent="14" name="email_zarizeni_UNIQUE">
+      <ColNames>email_zarizeni</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="94" parent="14" name="telefon_zarizeni_UNIQUE">
+      <ColNames>telefon_zarizeni</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_zarizeni</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="96" parent="14" name="email_zarizeni_UNIQUE">
+      <ColNames>email_zarizeni</ColNames>
+      <UnderlyingIndexName>email_zarizeni_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="97" parent="14" name="telefon_zarizeni_UNIQUE">
+      <ColNames>telefon_zarizeni</ColNames>
+      <UnderlyingIndexName>telefon_zarizeni_UNIQUE</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

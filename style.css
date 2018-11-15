@@ -1,0 +1,335 @@
+body {
+    color: black;
+    width: 100%;
+    height: 100vh;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #C9683D, #FDAA4B, #855E9D);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.indexBody {
+    background-image: url("pexels-photo-552791.jpeg");
+    color: white;
+}
+
+nav {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    color: white;
+}
+
+nav ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: 10px 0 13px 0;
+    height: 100%;
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 50px;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+.banner {
+    display: block;
+    width: 700px;
+    margin: 100px auto;
+    font-size: 40px;
+}
+
+.banner h3 {
+    margin-bottom: 0;
+}
+
+.banner h4 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.tab {
+    display: none;
+}
+
+.active {
+    border-bottom: 3px solid white;
+}
+
+.formWrapper {
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    background-color: #FFF3E0;
+    width: 900px;
+    height: 650px;
+    border-radius: 7px;
+}
+
+.formNav {
+    position: absolute;
+    width: 100%;
+    display: block;
+    bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    margin: 10px auto;
+}
+
+label[for="detskaPostel"] {
+    display: inline-block;
+}
+label[for="detskaZidle"] {
+    display: inline-block;
+}
+
+input, select {
+    font-size: 18px;
+    display: block;
+    margin: 10px auto;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #855E9D;
+}
+
+input[type="checkbox"] {
+    margin: 0 10px 5px 0;
+    width: auto;
+    display: inline-block;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    background-color: #855E9D;
+    color: white;
+    border: 3px solid #855E9D;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 20px;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+}
+
+button:focus, input[type="submit"]:focus {
+    outline: none;
+}
+
+button:hover, input[type="submit"]:hover {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    background-color: #855E9D;
+    color: white;
+}
+
+.formSteps ul {
+    width: 100%;
+    padding: 30px 0;
+    list-style-type: none;
+    counter-reset: step;
+}
+
+.formSteps ul li {
+    width: 19%;
+    display: inline-block;
+}
+
+.formSteps ul li a {
+    text-decoration: none;
+    color: #855E9D;
+}
+
+.formSteps ul li a:hover {
+    text-decoration: underline;
+}
+
+.formSteps ul li a:visited {
+    color: #855E9D;
+}
+
+.formSteps .fa-fw {
+    font-size: 22px;
+}
+
+#roomList button {
+    margin: 10px
+}
+
+#roomList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.activeFilter {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar td, .calendar th {
+    height: 40px;
+    width: calc(100%/7);
+}
+
+.left {
+    margin: 10px;
+    float: left;
+    padding: 7px 30px;
+}
+
+.right {
+    margin: 10px;
+    float: right;
+    padding: 7px 30px;
+}
+
+.before {
+    background-color: #BDBDBD;
+}
+
+.after {
+    cursor: pointer;
+    background-color: #A5D6A7;
+
+}
+
+.taken {
+    background-color: #ef9a9a;
+}
+
+.selected {
+    background-color: #FFD54F;
+}
+
+#idApartman, #prijezd, #odjezd {
+    display: none;
+}
+.calendar caption {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#nextMonth {
+    margin-right: 10px;
+    float: right;
+}
+#previousMonth {
+    margin-left: 10px;
+    float: left;
+}
+#removeSelected {
+    padding: 5px;
+}
+
+@media (max-width: 900px) and (min-width: 500px){
+    button, input[type="submit"] {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .formSteps ul {
+        margin: 0;
+        font-size: 10px;
+    }
+    .formWrapper {
+        padding-bottom: 80px;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+    nav {
+        font-size: 16px;
+        box-shadow: none;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 10px 20px;
+    }
+    .calendar td, .calendar th {
+        font-size: 14px;
+    }
+    .banner {
+        display: block;
+        width: 100%;
+        margin: auto;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 200px){
+    label {
+        font-size: 14px;
+    }
+    input, select {
+        font-size: 14px;
+        width: 80%;
+    }
+    button, input[type="submit"] {
+        font-size: 12px;
+        padding: 12px 5px;
+    }
+    .formSteps ul {
+        margin: 0;
+        font-size: 10px;
+    }
+    .formWrapper {
+        padding-bottom: 80px;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+    nav {
+        font-size: 14px;
+        box-shadow: none;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 10px 5px;
+    }
+    .calendar td, .calendar th {
+        font-size: 12px;
+    }
+    .banner {
+        display: block;
+        width: 100%;
+        margin: auto;
+        font-size: 20px;
+    }
+}
